@@ -5,7 +5,6 @@ from matplotlib.figure import Figure
 from data import obtain_data, clean_data, plot_data, read_api_key
 import io
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -15,8 +14,7 @@ def home():
 @app.route('/test')
 def chartTest():
   create_figure()
-  # plt.savefig('/static/images/new_plot.png')
-  return render_template('index.html', name = 'new_plot', url ='/static/img/graph.png')
+  return render_template('index.html', name = 'new_plot', url = '/static/img/graph.png')
 
 def create_figure():
     api_key = read_api_key()
